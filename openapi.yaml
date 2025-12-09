@@ -1,0 +1,96 @@
+openapi: 3.0.4
+info:
+  title: Query String Builder
+  description: Query String Builder converts JSON objects into properly formatted URL query strings with optional encoding.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/querystringbuilder:
+    post:
+      summary: Build Query String
+      description: Query String Builder converts JSON objects into properly formatted URL query strings with optional encoding.
+      operationId: querystringbuilder
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  queryString: name=John%20Doe&age=30&city=New%20York&interests=coding&interests=music&interests=travel
+                  fullURL: ?name=John%20Doe&age=30&city=New%20York&interests=coding&interests=music&interests=travel
+                  encoded: true
+                  paramCount: 4
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                params:
+                  type: object
+                  description: JSON object of parameters
+                  example:
+                    name: John Doe
+                    age: 30
+                    city: New York
+                    interests:
+                    - coding
+                    - music
+                    - travel
+                encode:
+                  type: boolean
+                  description: URL encode parameter values
+                  default: true
+                  example: true
+              required:
+              - params
+              example:
+                params:
+                  name: John Doe
+                  age: 30
+                  city: New York
+                  interests:
+                  - coding
+                  - music
+                  - travel
+                encode: true
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
