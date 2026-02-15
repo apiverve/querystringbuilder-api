@@ -12,14 +12,12 @@ namespace APIVerve.API.QueryStringBuilder
     {
         /// <summary>
         /// JSON object of parameters
-        /// Example: {"name":"John","age":30}
         /// </summary>
         [JsonProperty("params")]
         public string Params { get; set; }
 
         /// <summary>
         /// URL encode parameter values
-        /// Example: true
         /// </summary>
         [JsonProperty("encode")]
         public string Encode { get; set; }
