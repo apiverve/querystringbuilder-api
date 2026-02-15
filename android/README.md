@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:querystringbuilder-api:1.1.12'
+    implementation 'com.github.apiverve:querystringbuilder-api:1.1.13'
 }
 ```
 
@@ -47,7 +47,8 @@ QueryStringBuilderAPIClient client = new QueryStringBuilderAPIClient("YOUR_API_K
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("key", "value");
+    parameters.put("params", "{\"name\":\"John\",\"age\":30}");
+    parameters.put("encode", true);
 
     // Execute the request
     APIResponse response = client.execute(parameters);
@@ -135,7 +136,7 @@ For detailed API documentation, visit: [https://docs.apiverve.com/ref/querystrin
 
 ## Get Your API Key
 
-Get your API key from [https://apiverve.com](https://apiverve.com)
+Get your API key from [https://apiverve.com](https://apiverve.com?utm_source=android&utm_medium=readme)
 
 ---
 
@@ -162,4 +163,4 @@ This SDK is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## About APIVerve
 
-[APIVerve](https://apiverve.com) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
+[APIVerve](https://apiverve.com?utm_source=android&utm_medium=readme) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
