@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:querystringbuilder-api:1.1.13'
+    implementation 'com.github.apiverve:querystringbuilder-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ QueryStringBuilderAPIClient client = new QueryStringBuilderAPIClient("YOUR_API_K
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("params", "{\"name\":\"John\",\"age\":30}");
+    parameters.put("params", "[object Object]");
     parameters.put("encode", true);
 
     // Execute the request
