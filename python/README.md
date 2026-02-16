@@ -44,7 +44,10 @@ from apiverve_querystringbuilder.apiClient import QuerystringbuilderAPIClient
 # Initialize the client with your APIVerve API key
 api = QuerystringbuilderAPIClient("[YOUR_API_KEY]")
 
-query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
 ```
 
 ###### Simple Request
@@ -123,7 +129,10 @@ from apiverve_querystringbuilder.apiClient import QuerystringbuilderAPIClient, Q
 
 api = QuerystringbuilderAPIClient("[YOUR_API_KEY]")
 
-query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
 
 try:
     result = api.execute(query)
@@ -144,7 +153,10 @@ from apiverve_querystringbuilder.apiClient import QuerystringbuilderAPIClient, Q
 
 api = QuerystringbuilderAPIClient("[YOUR_API_KEY]")
 
-query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
 
 try:
     result = api.execute(query)
@@ -178,7 +190,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_querystringbuilder.apiClient import QuerystringbuilderAPIClient, QuerystringbuilderAPIClientError
 
-query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
 
 # Using context manager ensures proper cleanup
 with QuerystringbuilderAPIClient("[YOUR_API_KEY]") as api:
@@ -204,7 +219,10 @@ from apiverve_querystringbuilder.apiClient import QuerystringbuilderAPIClient
 # Enable debug mode
 api = QuerystringbuilderAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -219,8 +237,12 @@ from apiverve_querystringbuilder.apiClient import QuerystringbuilderAPIClient
 
 api = QuerystringbuilderAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "params": {"name":"John Doe","age":30,"city":"New York","interests":["coding","music","travel"]},
+    "encode": true
+}
+
 try:
-    query = { "params": { "name": "John Doe", "age": 30, "city": "New York", "interests": [ "coding", "music", "travel" ] }, "encode": true }
     result = api.execute(query)
     print(result)
 finally:
