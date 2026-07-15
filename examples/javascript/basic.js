@@ -9,15 +9,32 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/querystringbuilder';
 
 /**
- * Make a GET request to the Query String Builder API
+ * Make a POST request to the Query String Builder API
  */
 async function callQueryStringBuilderAPI() {
   try {
+    // Request body
+    const requestBody &#x3D; {
+    &quot;params&quot;: {
+        &quot;name&quot;: &quot;John Doe&quot;,
+        &quot;age&quot;: 30,
+        &quot;city&quot;: &quot;New York&quot;,
+        &quot;interests&quot;: [
+            &quot;coding&quot;,
+            &quot;music&quot;,
+            &quot;travel&quot;
+        ]
+    },
+    &quot;encode&quot;: true
+};
+
     const response = await fetch(API_URL, {
-      method: 'GET',
+      method: 'POST',
       headers: {
-        'x-api-key': API_KEY
-      }
+        'x-api-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
     });
 
     // Check if response is successful
