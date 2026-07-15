@@ -8,7 +8,7 @@ The Query String Builder API provides a simple, reliable way to integrate query 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/querystringbuilder?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
-[![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
+[![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
 **Available on:**
@@ -30,11 +30,27 @@ The Query String Builder API provides a simple, reliable way to integrate query 
 ```javascript
 async function callQueryStringBuilderAPI() {
     try {
+        const requestBody = {
+    "params": {
+        "name": "John Doe",
+        "age": 30,
+        "city": "New York",
+        "interests": [
+            "coding",
+            "music",
+            "travel"
+        ]
+    },
+    "encode": true
+};
+
         const response = await fetch('https://api.apiverve.com/v1/querystringbuilder', {
-            method: 'GET',
+            method: 'POST',
             headers: {
-                'x-api-key': 'YOUR_API_KEY_HERE'
-            }
+                'x-api-key': 'YOUR_API_KEY_HERE',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -50,8 +66,22 @@ callQueryStringBuilderAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/querystringbuilder?param=value" \
-  -H "x-api-key: YOUR_API_KEY_HERE"
+curl -X POST "https://api.apiverve.com/v1/querystringbuilder" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "params": {
+        "name": "John Doe",
+        "age": 30,
+        "city": "New York",
+        "interests": [
+            "coding",
+            "music",
+            "travel"
+        ]
+    },
+    "encode": true
+}'
 ```
 
 **Get your API key:** [https://apiverve.com](https://apiverve.com)
@@ -150,7 +180,7 @@ go get github.com/apiverve/querystringbuilder-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +199,7 @@ go get github.com/apiverve/querystringbuilder-api/go
 The Query String Builder API is commonly used for:
 
 - **Web Applications** - Add query string builder features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with query string builder capabilities
 - **Data Pipelines** - Process and analyze data at scale
