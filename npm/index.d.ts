@@ -4,19 +4,31 @@ declare module '@apiverve/querystringbuilder' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface querystringbuilderResponse {
     status: string;
     error: string | null;
     data: QueryStringBuilderData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface QueryStringBuilderData {
-      queryString: string;
-      fullURL:     string;
-      encoded:     boolean;
-      paramCount:  number;
+      queryString: null | string;
+      fullURL:     null | string;
+      encoded:     boolean | null;
+      paramCount:  number | null;
   }
 
   export default class querystringbuilderWrapper {
