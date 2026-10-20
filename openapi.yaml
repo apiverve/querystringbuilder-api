@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/querystringbuilder:
     post:
-      summary: Build Query String
+      summary: Query String Builder
       description: Build URL query string from JSON parameters
       operationId: querystringbuilder
       parameters: []
@@ -43,10 +43,8 @@ paths:
                 status: ok
                 error: null
                 data:
-                  queryString: >-
-                    name=John%20Doe&age=30&city=New%20York&interests=coding&interests=music&interests=travel
-                  fullURL: >-
-                    ?name=John%20Doe&age=30&city=New%20York&interests=coding&interests=music&interests=travel
+                  queryString: name=John%20Doe&age=30&city=New%20York&interests=coding&interests=music&interests=travel
+                  fullURL: ?name=John%20Doe&age=30&city=New%20York&interests=coding&interests=music&interests=travel
                   encoded: true
                   paramCount: 4
         '401':
