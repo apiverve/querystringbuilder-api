@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/querystringbuilder",
+    "description": "Query String Builder converts JSON objects into properly formatted URL query strings with optional encoding.",
+    "version": "1.2.2",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "querystringbuilder",
+        "query string",
+        "url builder",
+        "query parameters",
+        "url encoding",
+        "parameter builder"
+    ],
+    "homepage": "https://apiverve.com/marketplace/querystringbuilder?utm_source=php&utm_medium=referral&utm_content=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/querystringbuilder",
+        "source": "https://github.com/apiverve/querystringbuilder-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Querystringbuilder\\": "php/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Querystringbuilder\\Tests\\": "php/tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
