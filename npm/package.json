@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/querystringbuilder",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Query String Builder converts JSON objects into properly formatted URL query strings with optional encoding.",
   "main": "index.js",
   "types": "index.d.ts",
