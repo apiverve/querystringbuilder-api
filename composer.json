@@ -1,7 +1,7 @@
 {
     "name": "apiverve/querystringbuilder",
     "description": "Query String Builder converts JSON objects into properly formatted URL query strings with optional encoding.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
