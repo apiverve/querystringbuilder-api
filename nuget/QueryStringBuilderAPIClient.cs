@@ -68,7 +68,7 @@ namespace APIVerve.API.QueryStringBuilder
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "params", new ValidationRule { Type = "object", Required = true } },
-            { "encode", new ValidationRule { Type = "boolean", Required = false, Format = "url" } }
+            { "encode", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>
