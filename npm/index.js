@@ -30,7 +30,7 @@ class querystringbuilderWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/querystringbuilder';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"params":{"type":"object","required":true},"encode":{"type":"boolean","required":false,"format":"url","default":true}};
+        this.validationRules = {"params":{"type":"object","required":true},"encode":{"type":"boolean","required":false,"default":true}};
     }
 
     /**
