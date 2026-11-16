@@ -35,7 +35,7 @@ class Client
      */
     private const VALIDATION_RULES = [
         'params' => ['type' => 'object', 'required' => true],
-        'encode' => ['type' => 'boolean', 'required' => false, 'format' => 'url']
+        'encode' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
